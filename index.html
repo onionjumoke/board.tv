@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple TV Style UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(ellipse at top center, #1c1c1c 0%, #000 100%);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-label {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    .banner-scroll {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+      padding: 0 30px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .banner {
+      width: 360px;
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .banner:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .banner::after {
+      content: "placeholder text";
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.6);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 180px);
+      grid-template-rows: repeat(2, 120px);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .app-link {
+      text-decoration: none;
+    }
+
+    .app-tile {
+      width: 180px;
+      height: 120px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .app-tile img {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .app-tile:hover,
+    .app-tile.selected {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      border: 2px solid white;
+    }
+
+    .app-label {
+      position: absolute;
+      bottom: -25px;
+      font-size: 0.8rem;
+      text-align: center;
+      width: 100%;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-label">Boardtv.my.to</div>
+
+  <div class="banner-scroll">
+    <div class="banner" style="background-image: url('https://via.placeholder.com/360x240?text=Image+1');"></div>
+    <div class="banner" style="background-image: url('https://via.placeholder.com/360x240?text=Image+2');"></div>
+    <div class="banner" style="background-image: url('https://via.placeholder.com/360x240?text=Image+3');"></div>
+  </div>
+
+  <div class="app-grid">
+    <a href="https://example.com/1" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=1" alt="App 1"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/2" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=2" alt="App 2"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/3" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=3" alt="App 3"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/4" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=4" alt="App 4"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/5" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=5" alt="App 5"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/6" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=6" alt="App 6"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/7" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=7" alt="App 7"><div class="app-label">placeholder text</div></div>
+    </a>
+    <a href="https://example.com/8" class="app-link">
+      <div class="app-tile"><img src="https://via.placeholder.com/180x120?text=8" alt="App 8"><div class="app-label">placeholder text</div></div>
+    </a>
+  </div>
+</body>
+</html>
